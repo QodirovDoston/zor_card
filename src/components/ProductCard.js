@@ -3,8 +3,12 @@ import { Button, Card} from 'react-bootstrap';
 import { useThemeHook } from '../GlobalComponents/ThemeProvider';
 import { useCart } from 'react-use-cart';
 import { Link } from  "@reach/router";
+import { useTranslation } from 'react-i18next';
 
 const ProductCard = (props) => {
+
+  const { t } = useTranslation()
+
     let { img, price, title, id} = props.data;
     const [theme] = useThemeHook();
     const { addItem } = useCart();
@@ -12,8 +16,6 @@ const ProductCard = (props) => {
     const addToCart = () =>{
         addItem(props.data);
     }
-    
-    
     return (
         <Card 
             style={{ width: '18rem', height: 'auto' }}
@@ -29,17 +31,17 @@ const ProductCard = (props) => {
             </Link>
             <Card.Body>
                 <Card.Title style={{ textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap'}}>
-                    {title}
+                    {t(title)}
                 </Card.Title>
                 <Card.Title>
-                    Sum.<span className="h3">{price}</span>
+                    <span className="h3">{price}  $</span> 
                 </Card.Title>
                 <Button
                     onClick={()=> addToCart()}
                     className={`${theme? 'bg-dark-red text-black':'bg-light-red' } d-flex align-item-center m-auto border-0`}
                 >
-                        Add cart
-                </Button>                  
+                        {t("add")}
+                </Button>
             </Card.Body>
         </Card>
     );

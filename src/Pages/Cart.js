@@ -68,7 +68,7 @@ const Cart = () => {
                       {item.title}
                     </h6>
                   </td>
-                  <td>Rs. {item.price}</td>
+                  <td>{item.price} $</td>
                   <td>Quantity ({item.quantity})</td>
                   <td>
                     <Button
@@ -108,7 +108,7 @@ const Cart = () => {
             } justify-content-center w-100`}
           >
             <Col className="py-2">
-              <h4>Total Price: Rs. {cartTotal}</h4>
+              <h4>Total Price: {cartTotal} $</h4>
             </Col>
             <Col className="p-0" md={4}>
               <Button

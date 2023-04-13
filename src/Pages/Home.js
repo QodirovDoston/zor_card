@@ -4,8 +4,11 @@ import { useThemeHook } from '../GlobalComponents/ThemeProvider';
 import { BiSearch } from 'react-icons/bi';
 import SearchFilter from 'react-filter-search';
 import ProductCard from '../components/ProductCard';
+import { useTranslation } from 'react-i18next';
 
 const Home = () => {
+  const { t } = useTranslation()
+
     const [theme] = useThemeHook();
     const [searchInput, setSearchInput] = useState('');
     const [productData, setProductData] = useState([]);
@@ -16,17 +19,15 @@ const Home = () => {
                           setProductData(await res);
     }
 
- 
-
     useEffect(()=>{
         getResponse();
-    },[]);  
+    },[productData]);  
 
     return (
         <Container className="py-4">
             <Row className="justify-content-center">
                 <Col xs={10} md={7} lg={6} xl={4} className="mb-3 mx-auto text-center">
-                    <h1 className={theme? 'text-light my-5': 'text-black my-5'}>Search products</h1>
+                    <h1 className={theme? 'text-light my-5': 'text-black my-5'}>{t("Search")}</h1>
                     <InputGroup className="mb-3">
                         <InputGroup.Text className={theme? 'bg-black text-dark-primary': 'bg-light text-light-primary'}>
                             <BiSearch size="2rem" />

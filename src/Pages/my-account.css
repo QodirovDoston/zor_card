@@ -1,6 +1,6 @@
 .user-menu .nav-item svg{
     display: inline-block;
-    float: right;
+    /* float: right; */
 }
 .user-menu .nav-pills .nav-link{
     margin-bottom: .5rem;
