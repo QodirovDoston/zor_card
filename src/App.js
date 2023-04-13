@@ -5,6 +5,9 @@ import { useThemeHook } from './GlobalComponents/ThemeProvider';
 import Header from './components/Header';
 import { Router } from "@reach/router";
 
+
+
+
 //Pages
 import Home from './Pages/Home';
 import Cart from './Pages/Cart';
@@ -12,6 +15,8 @@ import ProductDetails from "./Pages/ProductDetails";
 import SignIn from "./Pages/SignIn";
 import Register from "./Pages/Register";
 import MyAccount from "./Pages/MyAccount";
+
+
 
 
 function App() {
