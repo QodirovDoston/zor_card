@@ -5,6 +5,8 @@ import App from './App';
 import { ThemeProvider } from './GlobalComponents/ThemeProvider';
 import { CartProvider } from 'react-use-cart';
 
+
+
 render(
   <React.StrictMode>
     <ThemeProvider>
